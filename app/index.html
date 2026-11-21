@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA 6 Trophy Guide and Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide and tracker</p>
+  <h1>Leonida Trophy Atlas</h1>
+  <p class="lede">All 55 trophies, each with its official name, description and grade, a guide in our own words, and the sources behind every fact. No online trophies. Expect 200&ndash;300 hours to the platinum: 1 platinum, 2 gold, 6 silver, 46 bronze.</p>
+  <div class="progress-wrap" aria-label="Overall progress">
+    <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    <p id="progressText" class="progress-text">0 of 55 earned &middot; 0%</p>
+  </div>
+  <p class="note">Checklist progress is saved in this browser only. A 100% checklist is not required here: finishing about 60% of the game is enough for the gold A Long Road, and this tracker counts trophies, not completion.</p>
+</header>
+
+<main>
+<section id="upnext" class="panel upnext" aria-label="Up next">
+  <h2>Up next</h2>
+  <p class="muted">The missable trophy always comes first, then the earliest story and cleanup steps you have not ticked yet.</p>
+  <ol id="upNextList"></ol>
+</section>
+
+<section id="roadmap" class="panel" aria-label="Roadmap to the platinum">
+  <h2>Roadmap to the platinum</h2>
+  <ol class="roadmap">
+    <li><strong>Stage 1 — Play the story (60&ndash;80 hours).</strong> Finish Chapters 1 to 4 and the final mission. Do the Chapter 1 meditation at Jason&rsquo;s house the morning after Down to Earth, before Chapter 1 ends. Keep a manual save at the start and end of each chapter; there is no mission replay.</li>
+    <li><strong>Stage 2 — The 100% checklist (about 100 hours).</strong> After the story, open Progress, Stats, 100% Completion. It is forgiving: 200 of 277 vehicles, 100 of 255 animals, 70 of 80 challenges, 15 of 18 meditations, 300 of 397 stunts, 30 of 40 races, all 42 shooting range golds, all 14 drone race locations, all 8 bank vaults and all 39 gang operations.</li>
+    <li><strong>Stage 3 — Strangers and odd jobs (about 10 hours).</strong> Finish 8 qualifying Strangers and Freaks strands, the five named questlines (Andy, Kenton, Billy, Randy, Tyrone), Bret&rsquo;s hunts, and the hidden trophies: the cocktail on Ocean Beach, the UFO night in Kelly County, and the bowling alley valuables.</li>
+    <li><strong>Stage 4 — Platinum.</strong> Vice Got a Price! pops when the other 54 are earned. No online play and no DLC are needed.</li>
+  </ol>
+  <div id="categoryProgress" class="cat-grid"></div>
+</section>
+
+<section class="panel" aria-label="Before you start">
+  <h2>Before you start — 6 habits that save hours</h2>
+  <ol class="habits">
+    <li><strong>Do the Chapter 1 meditation.</strong> The morning after Down to Earth, talk to Lucia in Jason&rsquo;s kitchen, follow her to the balcony and choose Accept. It is the only missable trophy.</li>
+    <li><strong>Save at every chapter edge.</strong> 15 manual slots, 1 autosave. Keep one save at the start and end of each chapter and rotate the rest.</li>
+    <li><strong>Scan everything with WAiNK.</strong> Hold up on the d-pad, then R1, on every new vehicle, landmark and curiosity you pass. It feeds three trophies at once.</li>
+    <li><strong>Do side content when it appears.</strong> Optional missions and quest givers can go quiet for a while; doing them on the spot keeps the map clean.</li>
+    <li><strong>Never turn cheats on.</strong> Cheats disable trophies and saving, so a cheat save cannot earn anything.</li>
+    <li><strong>Leave the grind for last.</strong> Challenges, stunts and the criminal profile fill up on their own while you play; farm only what is left at the end.</li>
+  </ol>
+</section>
+
+<section class="panel honesty" aria-label="Honesty box">
+  <h2>Honesty box — what we do not know yet</h2>
+  <p>Three trophies are still <strong>unconfirmed</strong>: <strong>Capital Offense</strong>, <strong>Bad Luck, I Guess</strong> and <strong>Ten Pin</strong>. Each one carries the method guides are reporting, labelled clearly in its panel, with its source named. Treat those three as leads, not facts, and check back after more players confirm them. Everything else in this guide is drawn from the published guides named beside each trophy.</p>
+  <p class="muted">Guide data checked 21 Nov 2026. Names, descriptions and grades are the official list as published by PlayStation; the guides beside them are written in our own words.</p>
+</section>
+
+<section class="panel controls" aria-label="Tracker controls">
+  <h2>Tracker</h2>
+  <div class="control-row">
+    <label>Search <input id="search" type="search" placeholder="Type a trophy or mission name"></label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+  </div>
+  <div class="filter-row" role="group" aria-label="Filter by kind">
+    <button type="button" class="filter-btn active" data-filter="all">All 55</button>
+    <button type="button" class="filter-btn" data-filter="story">Story</button>
+    <button type="button" class="filter-btn" data-filter="missable">Missable</button>
+    <button type="button" class="filter-btn" data-filter="collectibles">Collectibles</button>
+    <button type="button" class="filter-btn" data-filter="activities">Activities</button>
+    <button type="button" class="filter-btn" data-filter="unearned">Not earned yet</button>
+  </div>
+  <div class="control-row">
+    <button id="spoilerToggle" type="button">Show 19 hidden trophies</button>
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="import-label">Import progress <input id="importFile" type="file" accept="application/json"></label>
+    <button id="resetBtn" type="button">Reset checklist</button>
+  </div>
+  <p id="filterCount" class="muted"></p>
+</section>
+
+<section aria-label="Trophy list">
+  <ul id="trophyList" class="trophy-list"></ul>
+</section>
+
+<footer class="panel">
+  <h2>About this atlas</h2>
+  <p>Leonida Trophy Atlas is an unofficial, offline fan guide. It shows no Rockstar Games logo, artwork or game screenshots. Trophy names, descriptions and grades are the official PlayStation list; every guide is written in our own words and names its sources. Works with the network off; all files live in this folder.</p>
+</footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
